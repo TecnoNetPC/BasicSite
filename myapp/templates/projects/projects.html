@@ -13,13 +13,17 @@
 <body>
     <h1>Projects</h1>
     {% for project in projects %}
-
-        <div class="card">
-            <a href="{% url 'project_detail' project.id %}">
-                <h1>{{project.name}}</h1>
-            </a>
-            <a href="{% url 'delete_project' project.id %}">Delete</a>
-        </div>
+        {% if len(project) == 0 %}
+            <h2>No projects found.</h2>
+            <a href="{% url 'create_project' %}">Create a new project</a>
+        {% else %}
+            <div class="card">
+                <a href="{% url 'project_detail' project.id %}">
+                    <h1>{{project.name}}</h1>
+                </a>
+                <a href="{% url 'delete_project' project.id %}">Delete</a>
+            </div>
+        {% endif %}
 
     {% endfor %}
     <script src="" async defer></script>
