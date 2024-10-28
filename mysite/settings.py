@@ -82,7 +82,9 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 
-DATABASES = {'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))}
+DATABASES = {
+    'default': dj_database_url.config(default=os.getenv('DATABASE_PUBLIC_URL'))
+    }
 
 
 # Password validation
@@ -134,6 +136,6 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
-ALLOWED_HOSTS = ['basicsite-production.up.railway.app']
+ALLOWED_HOSTS = ['localhost', 'basicsite-production.up.railway.app']
 
 CSRF_TRUSTED_ORIGINS = ['http://*', 'https://basicsite-production.up.railway.app']
