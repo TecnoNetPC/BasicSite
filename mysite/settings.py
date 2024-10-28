@@ -38,11 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'whitenoise.runserver_nostatic',
     'myapp'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -128,5 +130,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "myapp/static")
 ]
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-ALLOWED_HOSTS = ['localhost', 'basicsite-production.up.railway.app']
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+ALLOWED_HOSTS = ['http://127.0.0.1:3000/', 'localhost', 'basicsite-production.up.railway.app']
