@@ -12,20 +12,21 @@
 </head>
 <body>
     <h1>Projects</h1>
-    {% for project in projects %}
-        {% if len(project) == 0 %}
-            <h2>No projects found.</h2>
+    {% if c == 0 %}
+        <div class="card">
+            <h2>No projects available</h2>
             <a href="{% url 'create_project' %}">Create a new project</a>
-        {% else %}
+        </div>
+    {% else %}
+        {% for project in projects %}
             <div class="card">
-                <a href="{% url 'project_detail' project.id %}">
+                <a class='button' href="{% url 'project_detail' project.id %}">
                     <h1>{{project.name}}</h1>
                 </a>
                 <a href="{% url 'delete_project' project.id %}">Delete</a>
             </div>
-        {% endif %}
-
-    {% endfor %}
+        {% endfor %}
+    {% endif %}
     <script src="" async defer></script>
 </body>
 {% endblock content %}

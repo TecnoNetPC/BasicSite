@@ -60,7 +60,7 @@ body {
 }
 
 .card a {
-    color: black;
+    color: greenyellow;
     text-decoration: none;
     display: block;
     transition: 0.3s;

@@ -11,15 +11,22 @@
 </head>
 <body>
     <h1>Tasks</h1>
-    {% for task in tasks %}
+    {% if c_t == 0 %}
         <div class="card">
-            <h1> {%if task.done == False %} ⏱ {% else %} ✅ {% endif %} {{task.title}}</h1>
-            <p>{{task.description}}</p>
-            <div class="link"><a href= "{% url 'project_detail' task.project.id %}">Project: {{task.project.name}}</a></div>
-            <a href="{% url 'delete_task' task.id %}">Delete</a>
-            <a href="{% url 'true_task' task.id %}">Done</a>
+            <h2>No tasks found.</h2>
+            <a href="{% url 'create_task' %}">Create a new task</a>
         </div>
-    {% endfor %}
+    {% else %}
+        {% for task in tasks %}
+            <div class="card">
+                <h1> {%if task.done == False %} ⏱ {% else %} ✅ {% endif %} {{task.title}}</h1>
+                <p>{{task.description}}</p>
+                <div class="link"><a href= "{% url 'project_detail' task.project.id %}">Project: {{task.project.name}}</a></div>
+                <a href="{% url 'delete_task' task.id %}">Delete</a>
+                <a href="{% url 'true_task' task.id %}">Done</a>
+            </div>
+        {% endfor %}
+    {% endif %}
     <script src="" async defer></script>
 </body>
 {% endblock content %}

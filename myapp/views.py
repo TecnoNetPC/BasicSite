@@ -27,16 +27,24 @@ def about(request):
 def projects(request):
     # projects = list(Project.objects.values())
     projects = Project.objects.all()
+    c = 0
+    for p in projects:
+        c += 1
     return render(request, 'projects/projects.html', {
-        'projects': projects
+        'projects': projects,
+        'c': c
     })
 
 
 def tasks(request):
     # task = Task.objects.get(title = title)
     tasks = Task.objects.all()
+    c_t = 0
+    for t in tasks:
+        c_t += 1
     return render(request, 'tasks/tasks.html', {
-        'tasks': tasks
+        'tasks': tasks,
+        'c_t': c_t
     })
 
 
@@ -64,9 +72,13 @@ def create_project(request):
 def project_detail(request, id):
     project = get_object_or_404(Project, id=id)
     tasks = Task.objects.filter(project_id=id)
+    c_t = 0
+    for t in tasks:
+        c_t += 1
     return render(request, 'projects/project_detail.html', {
         'project': project,
-        'tasks': tasks
+        'tasks': tasks,
+        'c_t': c_t
     })
 
 

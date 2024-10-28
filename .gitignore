@@ -6,3 +6,5 @@ __pycache__
 
 staticfiles
 
+1db.sqlite3
+
