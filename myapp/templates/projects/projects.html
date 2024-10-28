@@ -1,0 +1,27 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block content %}    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Projects</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <h1>Projects</h1>
+    {% for project in projects %}
+
+        <div class="card">
+            <a href="{% url 'project_detail' project.id %}">
+                <h1>{{project.name}}</h1>
+            </a>
+            <a href="{% url 'delete_project' project.id %}">Delete</a>
+        </div>
+
+    {% endfor %}
+    <script src="" async defer></script>
+</body>
+{% endblock content %}

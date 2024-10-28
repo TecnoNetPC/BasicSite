@@ -1,0 +1,15 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block content %}
+    {{project}}
+
+    <h2>Tasks</h2>
+    {% for task in tasks %}
+    <div class="card">
+        <p>{{ task.title }}</p>
+        <a href="{% url 'delete_task' task.id %}">delete</a>
+    </div>
+    {% endfor %}
+
+{% endblock content %}

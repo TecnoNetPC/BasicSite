@@ -1,0 +1,121 @@
+body {
+    background: #202020;
+    color: whitesmoke;
+}
+
+
+.navbar {
+    background: #404040;
+    padding: 5px 10px;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul li {
+    list-style-type: none;
+    position: relative;
+}
+
+.navbar ul li a {
+    color: whitesmoke;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.navbar ul li a:hover {
+    color: aquamarine;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 10px;
+}
+
+.card {
+    background: #303030;
+    color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: 0.3s;
+    overflow: hidden;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card a:hover {
+    color: aquamarine;
+    text-decoration: none;
+    transition: 0.3s;
+    transform: scale(1.05);
+    transform-origin: center;
+    transform-style: preserve-3d;
+    z-index: 1;
+    position: relative;
+}
+
+.card a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+}
+
+.card h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+    transform: scale(1);
+    transform-origin: center;
+    transform-style: preserve-3d;
+    z-index: 0;
+    position: relative;
+    color: white;
+}
+
+.card h1:hover {
+    transform: scale(1.05);
+    transform-origin: center;
+    transform-style: preserve-3d;
+    z-index: 1;
+    position: relative;
+    color: aquamarine;
+}
+
+.link a {
+    font-size: 18px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+    transform: scale(1);
+    transform-origin: center;
+    transform-style: preserve-3d;
+    z-index: 0;
+    position: relative;
+    color: white;
+}
+
+.input {
+    background: wheat;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    transition: 0.3s;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    align-self: center;
+    text-decoration: none;
+}

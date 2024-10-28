@@ -1,0 +1,25 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tasks</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <h1>Tasks</h1>
+    {% for task in tasks %}
+        <div class="card">
+            <h1> {%if task.done == False %} ⏱ {% else %} ✅ {% endif %} {{task.title}}</h1>
+            <p>{{task.description}}</p>
+            <div class="link"><a href= "{% url 'project_detail' task.project.id %}">Project: {{task.project.name}}</a></div>
+            <a href="{% url 'delete_task' task.id %}">Delete</a>
+            <a href="{% url 'true_task' task.id %}">Done</a>
+        </div>
+    {% endfor %}
+    <script src="" async defer></script>
+</body>
+{% endblock content %}

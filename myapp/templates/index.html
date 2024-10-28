@@ -1,0 +1,11 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+<img src="{% static 'rb_2149244363.png' %}" alt="" width="200">
+<p>{% lorem 1 b random %}</p>
+
+<h1>El Lorem de arriba cambia automaticamente - The Lorem above changes automatically</h1>
+{% endblock content %}
